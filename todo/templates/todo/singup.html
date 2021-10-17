@@ -1,0 +1,15 @@
+{% extends 'todo/layout.html' %}
+
+{% block body %}
+<h1>Welcome. We are glad that you've chosen our service to make your life more organized.</h1>
+<form action="{% url 'signup' %}" method="post">
+    {% csrf_token %}
+    <input type="text" name="username" placeholder="Username:" />
+    <input type="email" name="email" placeholder="Email:" />
+    <input type="password" name="password" placeholder="Password:" />
+    <input type="password" name="conf_password" placeholder="Confirm password:" />
+    <input type="submit" value="Sign Up" />
+</form>
+
+<h1>Have an account yet? <a href="{% url 'login_view' %}">Log In</a></h1>
+{% endblock %}

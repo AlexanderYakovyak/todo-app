@@ -1,0 +1,21 @@
+{% extends 'todo/layout.html' %}
+
+{% block body %}
+<h1>Hi,there!</h1>
+<div>
+    {% if user.is_authenticated %}
+        Signed in as <strong>{{ user.username }}</strong>.
+    {% else %}
+        Not signed in.
+    {% endif %}
+</div>
+
+{% if user.is_authenticated %}
+    <div>
+        <form action="{% url 'logout_view' %}" method="post">
+            {% csrf_token %}
+            <input type="submit"  value="Log Out" />
+        </form>
+    </div>
+{% endif %}
+{% endblock %}

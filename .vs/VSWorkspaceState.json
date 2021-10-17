@@ -1,0 +1,14 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\lifestyle",
+    "\\todo",
+    "\\todo\\migrations",
+    "\\todo\\static\\todo",
+    "\\todo\\static\\todo\\media",
+    "\\todo\\templates",
+    "\\todo\\templates\\todo"
+  ],
+  "SelectedNode": "\\todo\\urls.py",
+  "PreviewInSolutionExplorer": false
+}

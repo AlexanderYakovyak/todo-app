@@ -1,0 +1,18 @@
+{% extends 'todo/layout.html' %}
+
+{% block body %}
+<h1>Hi,there!</h1>
+
+{% if message %}
+    {{message}}
+{% endif %}
+
+<form action="{% url 'login_view' %}" method="post">
+    {% csrf_token %}
+    <input type="text" name="username" placeholder="Username:" />
+    <input type="password" name="password" placeholder="Password:" />
+    <input type="submit" value="Log in" />
+</form>
+
+<h1>Don`t have an account yet? <a href="{% url 'signup' %}">Sign Up</a></h1>
+{% endblock %}
