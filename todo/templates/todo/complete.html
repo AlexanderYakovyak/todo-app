@@ -1,0 +1,39 @@
+{% extends 'todo/layout.html' %}
+
+{% block sidebarcategory %}
+    {% for category in categories %}
+        <li class="nav-item">
+            <a class="nav-link active" href="{% url 'category_view' category.id %}">{{category.name}}</a>
+        </li>
+    {% endfor %}
+{% endblock %}
+
+{% block body %}
+    <div class="complete-tasks-list">
+
+       {% for task in complete_tasks %}
+
+            <div class="complete-task-main">
+                <div class="task-info">
+                    <h4>{{task.description}}</h4>
+                    <div class="additional-info">
+                        {% if task.category %}
+                        <h5>{{task.category}}</h5>
+                        {% endif %}
+                    </div>
+                </div>
+
+                <div class="tasks-control-buttons">
+                    <form action="{% url 'complete' %}" method="post">
+                        {% csrf_token %}
+                        <input type="hidden" name="delete" value="{{task.id}}" />
+                        <input class="remove-button" type="submit" value="Remove" />
+                    </form>
+                </div>
+            </div>
+        {% empty %}
+            <h4 class="empty-tasks-text">You have no complete tasks yet</h4>
+        {% endfor %}
+
+    </div>
+{% endblock %}

@@ -1,0 +1,25 @@
+{% extends 'todo/layout.html' %}
+
+{% block sidebarcategory %}
+    {% for category in categories %}
+        <li class="nav-item">
+            <a class="nav-link active" href="{% url 'category_view' category.id %}">{{category.name}}</a>
+        </li>
+    {% endfor %}
+{% endblock %}
+
+{% block body %}
+    <div class="new-category-view">
+        {% if message %}
+        <h5 class="warning-message">{{message}}</h5>
+        {% endif %}
+        <form class="new-category-form" action="{% url 'new_category' %}" method="post">
+            {% csrf_token %}
+            {{category_form.as_table}}
+            {% if tasks_available %}
+            {{tasks_form.as_table}}
+            {% endif %}
+            <input type="submit" value="Add Category" />
+        </form>
+    </div>
+{% endblock %}

@@ -3,12 +3,12 @@
     "",
     "\\lifestyle",
     "\\todo",
-    "\\todo\\migrations",
+    "\\todo\\static",
     "\\todo\\static\\todo",
-    "\\todo\\static\\todo\\media",
+    "\\todo\\static\\todo\\css",
     "\\todo\\templates",
     "\\todo\\templates\\todo"
   ],
-  "SelectedNode": "\\todo\\urls.py",
+  "SelectedNode": "\\todo\\views.py",
   "PreviewInSolutionExplorer": false
 }

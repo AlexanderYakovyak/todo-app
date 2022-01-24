@@ -1,18 +1,23 @@
 {% extends 'todo/layout.html' %}
 
 {% block body %}
-<h1>Hi,there!</h1>
+    <div class="login-view">
+        {% if message %}
+            <h5 class="warning-message">{{message}}</h5>
+        {% endif %}
 
-{% if message %}
-    {{message}}
-{% endif %}
+        {% if user.is_authenticated %}
+            <h2 class="greeting">Glad to see you again, {{user.username}}</h2>
+        {% else %}
+            <h2 class="greeting">Hi, there &#x1F44B;</h2>
+            <form class="login-form" action="{% url 'login_view' %}" method="post">
+                {% csrf_token %}
+                <input type="text" name="username" placeholder="Username:" autocomplete ="off"/>
+                <input type="password" name="password" placeholder="Password:" autocomplete ="off"s/>
+                <input class="login-submit" type="submit" value="Log in" />
+            </form>
 
-<form action="{% url 'login_view' %}" method="post">
-    {% csrf_token %}
-    <input type="text" name="username" placeholder="Username:" />
-    <input type="password" name="password" placeholder="Password:" />
-    <input type="submit" value="Log in" />
-</form>
-
-<h1>Don`t have an account yet? <a href="{% url 'signup' %}">Sign Up</a></h1>
+            <h4 class="signup-text">Don`t have an account yet? <a href="{% url 'signup' %}">Sign Up</a></h4>
+        {% endif %}
+    </div>
 {% endblock %}

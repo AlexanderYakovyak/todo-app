@@ -1,17 +1,45 @@
+{% load static %}
+
 <DOCTYPE html>
     <head lang="en">
         <title>Doer</title>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" href="{% static 'todo/css/styles.css' %}" />
     </head>
     <body>
         <nav class="navbar navbar-light bg-light">
-            <a class="navbar-brand" href="{% url 'main' %}">
-                {% load static%}<img src="{% static "todo/media/logo.jpg" %}" width="30" height="30" alt="">
-            </a>
+            <h1 class="logo">doer app</h1>
         </nav>
+          
+        {% if user.is_authenticated %}
+            <ul class="nav justify-content-center">
+                <li class="nav-item">
+                    <a class="nav-link active" href="{% url 'main' %}">Active tasks</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="{% url 'complete' %}">Complete tasks</a>
+                </li>
+                {% block sidebarcategory %}
+                {% endblock %}
+                <li class="nav-item">
+                    <a class="nav-link active" href="{% url 'all_categories' %}">View all categories</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="{% url 'new_task' %}">Add New Task</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="{% url 'new_category' %}">Add New Category</a>
+                </li>
+                <li class="logout-menu">
+                    <form action="{% url 'logout_view' %}" method="post">
+                        {% csrf_token %}
+                        <input class="logout-submit" type="submit" value="Log Out" />
+                    </form>
+                </li>
+            </ul>
+        {% endif %}
 
         {%block body%}
-
         {%endblock %}
     </body>
-</html>
+    </html>

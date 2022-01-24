@@ -7,32 +7,24 @@
         </li>
     {% endfor %}
 {% endblock %}
-    
+
+
 {% block body %}
-
-
-<div class="active-tasks-list">
-
-   {% for task in active_tasks %}
-
+    <h1 class="category-name">Category: {{category_name}}</h1>
+    <div class="active-tasks-list">
+        {% for task in active_tasks %}
         <div class="active-task">
             <div class="task-info">
                 <h4>{{task.description}}</h4>
                 <div class="additional-info">
-                    {% if task.category or task.deadline%}
-                        {% if task.category %}
-                        <h6>{{task.category}} </h6>
-                        {% endif %}
-
-                        {% if task.deadline %}
-                        <h6> &#x1F4C5 {{task.deadline|date:'F j'}}</h6>
-                        {% endif %}
+                    {% if task.deadline %}
+                    <h6> &#x1F4C5 {{task.deadline|date:'F j'}}</h6>
                     {% endif %}
                 </div>
             </div>
 
             <div class="tasks-control-buttons">
-                <form  action="{% url 'main' %}" method="post">
+                <form action="{% url 'main' %}" method="post">
                     {% csrf_token %}
                     <input type="hidden" name="task" id="task" value="{{task.id}}" />
                     <input class="complete-button" type="submit" name="complete" value="Complete" />
@@ -51,9 +43,8 @@
                 </form>
             </div>
         </div>
-    {% empty %}
+        {% empty %}
         <h4 class="empty-tasks-text">You have no active tasks yet</h4>
-    {% endfor %}
-</div>
-
+        {% endfor %}
+    </div>
 {% endblock %}

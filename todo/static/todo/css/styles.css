@@ -1,0 +1,396 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster+Two:wght@700&family=PT+Sans:wght@400;700&display=swap');
+
+:root {
+    --font-header: 'Lobster Two', cursive;
+    --font-main: 'PT Sans', sans-serif;
+}
+
+::-webkit-scrollbar {
+    width: 0px;
+}
+
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: none;
+}
+
+::-webkit-scrollbar-thumb:window-inactive {
+    background: none;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    margin-inline: auto;
+    width: min(100%, 100em);
+}
+
+.logo {
+    margin: auto;
+    color: #d337db;
+    font-size: 2em;
+    font-family: var(--font-header);
+}
+
+.logout-menu {
+    margin-top: 0.5em;
+    font-family: var(--font-main);
+    text-align: right;
+}
+
+.logout-submit {
+    border-radius: 8px;
+    border-width: 0;
+    background-color: #f26f66;
+    color: white;
+}
+
+/*style for login.html elements -> */
+.login-view {
+    text-align: center;
+    margin: 0.5em 0;
+}
+
+.greeting {
+    font-size: 2em;
+    font-family: var(--font-main);
+    font-weight: 700;
+}
+
+.login-form > * {
+    display: inline-block;
+    width: 20%;
+    height: 2em;
+    margin: 0.5em 40% 0.5em 40%;
+    background-color: #e1e4fa;
+    border-radius: 14px;
+    border-width: 0;
+    padding-left: 0.5em;
+    font-size: 1em;
+    color: #616478;
+}
+
+.login-form > input::placeholder {
+    color: #616478;
+    font-size: 1em;
+    font-family: var(--font-main);
+    padding-left: 0.5em;
+}
+
+.login-form > input:focus {
+    outline: none;
+    border-width: 0;
+    color: #616478;
+    font-size: 1em;
+    font-family: var(--font-main);
+    padding-left: 1em;
+}
+
+.login-form > input:focus::placeholder {
+    color: transparent;
+}
+
+.login-submit {
+    background-color: #5267fa;
+    color: white;
+}
+
+.signup-text {
+    font-size: 1.3em;
+    font-family: var(--font-main);
+    font-weight: 600;
+}
+
+/*style for login.html elements -> */
+
+.signup-view {
+    text-align:center;
+}
+
+.signup-form > * {
+    display: inline-block;
+    width: 20%;
+    height: 2em;
+    margin: 0.5em 40% 0.5em 40%;
+    background-color: #e1e4fa;
+    border-radius: 14px;
+    border-width: 0;
+    padding-left: 0.5em;
+    font-size: 1em;
+    color: #616478;
+}
+
+.signup-form > input::placeholder {
+    color: #616478;
+    font-size: 1em;
+    font-family: var(--font-main);
+    padding-left: 0.5em;
+}
+
+.signup-form > input:focus {
+    outline: none;
+    border-width: 0;
+    color: #616478;
+    font-size: 1em;
+    font-family: var(--font-main);
+    padding-left: 1em;
+}
+
+.signup-form > input:focus::placeholder {
+    color: transparent;
+}
+
+.signup-submit {
+    background: #fae632;
+    color: #3c3e6e;
+    font-weight: bold;
+}
+
+.login-text {
+    font-size: 1.3em;
+    font-family: var(--font-main);
+    font-weight: 600;
+}
+
+/*style for main.html, complete.html, category.html elements -> */
+
+.active-tasks-list, .complete-tasks-list {
+    margin-top: 2em;
+}
+
+.active-task, .complete-task-main {
+    height: inherit;
+    border-style: solid;
+    border-radius: 12px;
+    border-width: 0;
+    background: #f2f2f2;
+    font-family: var(--font-main);
+    padding: 0.5em 1em;
+    width: 30%;
+    margin-inline: auto;
+    margin-bottom: 0.5em;
+}
+
+.task-info, .tasks-control-buttons {
+    display: inline;
+}
+
+.tasks-control-buttons > * {
+    display:inline;
+}
+
+.additional-info {
+    display: flex;
+}
+
+.task-info > * {
+    margin: 0;
+    font-size: 1.4em;
+    font-weight: 500;
+}
+
+.additional-info > * {
+    margin-block: 0.2em;
+    margin-right: 0.5em;
+    font-size: 0.55em;
+    font-weight: 700;
+    color: #2077d4;
+}
+.complete-button {
+    width: 6em;
+    font-family: var(--font-main);
+    font-size: 0.7em;
+    font-weight: bold;
+    background: #73f09b;
+    color: black;
+    border-width: 0;
+    border-radius:8px;
+}
+
+.remove-button {
+    width: 6em;
+    font-family: var(--font-main);
+    font-size: 0.7em;
+    font-weight: bold;
+    background: #e03a53;
+    color: white;
+    border-width: 0;
+    border-radius: 8px;
+}
+
+.edit-button {
+    width: 6em;
+    font-family: var(--font-main);
+    font-size: 0.7em;
+    font-weight: bold;
+    background: #e9a3f0;
+    color: black;
+    border-width: 0;
+    border-radius: 8px;
+}
+
+.empty-tasks-text {
+    text-align: center;
+    font-family: var(--font-main);
+    font-weight: 500;
+    color: #4a4946;
+}
+
+.category-name {
+    text-align: center;
+    font-family: var(--font-header);
+    font-size: 2em;
+    margin-block: 0.5em;
+}
+
+
+/*style for new_task.html elements -> */
+
+.new-task-view {
+    text-align: center;
+    margin: 0.5em 0;
+}
+
+.new-task-form > * {
+    display: inline-block;
+    width: 30%;
+    height: 1.7em;
+    margin: 0.5em 35% 0.5em 35%;
+    background-color: #e1e4fa;
+    border-radius: 14px;
+    border-width: 0;
+    font-size: 1.2em;
+    font-weight: 700;
+    color: #402a28;
+}
+
+.new-task-form > input:focus {
+    outline: none;
+    border-radius: 14px;
+    border-width: 2px;
+    border-color: #d337db;
+    color: #616478;
+    font-family: var(--font-main);
+    font-weight: 600;
+    padding-left: 1em;
+}
+
+#id_description, #id_category, #id_deadline {
+    background-color: white;
+    border-radius: 14px;
+    border-width: 2px;
+    border-color: #d337db;
+    font-family: var(--font-main);
+    font-size: 1.2em;
+    font-weight: 600;
+    padding-left: 1em;
+    color: black;
+}
+
+.add-task-submit {
+    background: #abf5cb;
+    color: black;
+    font-weight: bold;
+    height: 2em;
+}
+
+/*style for new_category.html elements -> */
+
+.new-category-view {
+    text-align: center;
+    margin: 0.5em 0;
+}
+
+.new-category-form > * {
+    display: inline-block;
+    width: 30%;
+    height: 1.7em;
+    margin: 0.5em 35% 0.5em 35%;
+    background-color: #e1e4fa;
+    border-radius: 14px;
+    border-width: 0;
+    font-size: 1.2em;
+    font-weight: 700;
+    color: #402a28;
+}
+
+.new-category-form > select[multiple] {
+    height: 5em;
+}
+
+.new-category-form > input:focus {
+    outline: none;
+    border-radius: 14px;
+    border-width: 2px;
+    border-color: #d337db;
+    color: #616478;
+    font-family: var(--font-main);
+    font-weight: 600;
+    padding-left: 1em;
+}
+
+#id_name, #id_tasks {
+    background-color: white;
+    border-radius: 14px;
+    border-width: 2px;
+    border-color: #d337db;
+    font-family: var(--font-main);
+    font-size: 1.2em;
+    font-weight: 600;
+    padding-left: 1em;
+    color: black;
+}
+
+#id_tasks > *:checked {
+    background: #6c9ceb;
+    border-radius: 8px;
+
+}
+
+.category {
+    text-align:center;
+}
+
+.category > * {
+    margin-block: 0.5em;
+    font-family: var(--font-main);
+    font-size: 1.5em;
+}
+
+.category > h6 > a {
+    color: #541e63;
+    text-decoration: none;
+}
+
+.category > h6 {
+    display:inline-block;
+}
+
+.remove-category-form {
+    display: inline-block;
+    margin-left: 0.5em;
+}
+
+.remove-category-button {
+    padding: 0;
+    width: 0.8em;
+    height: 0.8em;
+    border-radius: 50%;
+    border-width: 0.1em;
+    line-height: 0.6em;
+    font-family: var(--font-main);
+    font-size: 0.8em;
+    background: #e03a53;
+}
+
+
+.warning-message {
+    font-family: var(--font-main);
+    font-size: 1.5em;
+    font-weight: 500;
+    color: #e03a53;
+}
+

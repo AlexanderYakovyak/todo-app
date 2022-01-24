@@ -1,0 +1,20 @@
+{% extends 'todo/layout.html' %}
+
+{% block body %}
+
+    <div class="categories-view">
+        {% for category in categories %}
+            <div class="category">
+                <h6><a href="{% url 'category_view' category.id %}">{{category.name}}</a></h6>
+                <form class="remove-category-form" action="{% url 'all_categories' %}" method="post">
+                    {% csrf_token %}
+                    <input type="hidden" name="delete" value="{{category.id}}" />
+                    <input class="remove-category-button" type="submit" value="X" />
+                </form>
+            </div>
+            {% empty %}
+            <h4 class="empty-tasks-text">You have not created any category</h4>
+            {% endfor %}
+    </div>
+
+{% endblock %}

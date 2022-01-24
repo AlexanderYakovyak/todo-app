@@ -1,15 +1,20 @@
 {% extends 'todo/layout.html' %}
 
 {% block body %}
-<h1>Welcome. We are glad that you've chosen our service to make your life more organized.</h1>
-<form action="{% url 'signup' %}" method="post">
-    {% csrf_token %}
-    <input type="text" name="username" placeholder="Username:" />
-    <input type="email" name="email" placeholder="Email:" />
-    <input type="password" name="password" placeholder="Password:" />
-    <input type="password" name="conf_password" placeholder="Confirm password:" />
-    <input type="submit" value="Sign Up" />
-</form>
+    <div class="signup-view">
 
-<h1>Have an account yet? <a href="{% url 'login_view' %}">Log In</a></h1>
+        <h2 class="greeting">Welcome &#x1F389</h2>
+        <h5>We are glad that you've chosen our service <br />to make your life more organized.</h5>
+        <form class="signup-form" action="{% url 'signup' %}" method="post">
+            {% csrf_token %}
+            <input type="text" name="username" placeholder="Username:" autocomplete ="off"/>
+            <input type="email" name="email" placeholder="Email:" autocomplete ="off"/>
+            <input type="password" name="password" placeholder="Password:" autocomplete ="off"/>
+            <input type="password" name="conf_password" placeholder="Confirm password:" autocomplete ="off"/>
+            <input class="signup-submit" type="submit" value="Sign Up" />
+        </form>
+
+        <h4 class="login-text">Already have an account? <a href="{% url 'login_view' %}">Log In</a></h4>
+
+    </div>
 {% endblock %}
